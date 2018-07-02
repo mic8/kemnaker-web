@@ -1,0 +1,783 @@
+@import 'position';
+@import 'document';
+@import "global";
+@import "form";
+@import "base";
+@import "navigation";
+@import "footer";
+@import "tabs";
+@import "auth";
+@import "news";
+@import "contact";
+@import "profile";
+@import "profile_2";
+
+//#15406a
+
+label,
+input,
+.k-dropdown-wrap .k-input,
+textarea,
+.k-widget.form-control .k-input,
+.k-grid td {
+    font-weight: 500;
+}
+
+.k-grid td {
+    border-color: transparent;
+}
+
+// BODY
+.bg-gray-light {
+    background: $gray-light;
+}
+
+.section-gray {
+    background-color: #f8f9fa;
+}
+
+.k-grid a,
+a,
+a:not([href]):not([tabindex]) {
+    cursor: pointer;
+    font-weight: 500;
+    color: theme-color('primary');
+}
+
+label,
+input,
+.k-switch-label-off,
+.k-switch-label-on,
+.k-button,
+small,
+.k-widget.form-control .k-input {
+    font-weight: 500;
+}
+
+.k-switch-handle,
+.km-switch-handle {
+    color: $gray-600;
+}
+
+.k-switch-container {
+    background-color: $gray-100;
+}
+
+.ht-100v {
+    min-height: 100vh;
+}
+
+// LOGO
+
+.header {
+    padding: 15px;
+}
+
+.logo-sidebar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px;
+}
+
+.logo-sidebar {
+    margin: 0 auto;
+}
+
+// Content user panel
+.content-wrapper {
+    background: $white;
+}
+
+.content-header {
+    background: $base-bg;
+    padding: 20px 0;
+    border-bottom: 1px solid $border-color;
+    margin-bottom: 20px;
+}
+
+.list-hover .list-group-item {
+    cursor: pointer;
+    background-color: transparent;
+    position: relative;
+    margin: 0;
+    transition: background-color 0.5s;
+}
+
+.list-hover .list-group-item:hover {
+    background-color: rgba(0, 0, 0, 0.03);
+    transition: background-color 0.15s;
+}
+
+.list-group-item {
+    padding: 18px 16px;
+    border-color: transparent;
+    margin-bottom: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+    list-style: none;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+// STEP WIZARD
+.f1 {
+    padding: 25px;
+    background: #fff;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.f1 h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.f1-steps {
+    overflow: hidden;
+    position: relative;
+    margin-top: 20px;
+}
+
+.f1-progress {
+    position: absolute;
+    top: 13px;
+    background: theme-color('secondary');
+    height: 3px;
+}
+
+.f1-progress-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: #15406a;
+}
+
+.f1-step {
+    position: relative;
+    float: left;
+    width: 25%;
+    padding: 0 5px;
+}
+
+.f1-step-icon {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin-top: 0;
+    background: theme-color('secondary');
+    font-size: 16px;
+    color: #fff;
+    line-height: 30px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.f1-step.activated .f1-step-icon {
+    background: #fff;
+    border: 3px solid #15406a;
+    color: #15406a;
+    line-height: 24px;
+}
+
+.f1-step.active .f1-step-icon {
+    width: 30px;
+    height: 30px;
+    margin-top: 0;
+    background: #15406a;
+    font-size: 16px;
+    line-height: 30px;
+}
+
+.f1-step p {
+    margin-top: 10px;
+    color: color('muted');
+    font-size: $font-size-sm;
+    font-weight: 500;
+}
+
+.f1-step.activated p {
+    color: theme-color('primary');
+}
+
+.f1-step.active p {
+    color: theme-color('primary');
+}
+
+.f1 fieldset {
+    display: none;
+    text-align: left;
+}
+
+.f1-buttons {
+    text-align: right;
+}
+
+.f1 .input-error {
+    border-color: #15406a;
+}
+
+.text-fieldset {
+    font-size: $font-size-sm;
+    text-transform: uppercase;
+    font-weight: $font-weight-bold;
+}
+
+// Auth Page
+.bg-auth {
+    background-image: url('assets/img/bg3.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: repeat-x;
+}
+
+.img-logo-sidebar {
+    width: 85px;
+}
+
+// Override KENDO
+.k-combobox.no-arrow {
+    .k-select {
+        background: none !important;
+        border: none !important;
+
+        .k-i-arrow-s {
+            display: none !important;
+        }
+    }
+    .k-input {
+        padding-right: 30px;
+    }
+    .k-dropdown-wrap {
+        .k-i-close {
+            right: 10px;
+        }
+    }
+}
+
+.k-icon {
+    &.k-icon-22 {
+        font-size: 22px;
+    }
+
+    &.k-icon-32 {
+        font-size: 32px;
+    }
+
+    &.k-icon-48 {
+        font-size: 48px;
+    }
+}
+
+.app-body {
+    margin-top: 55px;
+    .main {
+        background: #fff;
+    }
+}
+
+.breadcrumb {
+    @include border-radius(0);
+}
+
+.nav-upper {
+    > .nav-item {
+        > .nav-link {
+            font-size: 12px;
+            text-transform: uppercase;
+            font-weight: bold;
+            height: 32px;
+            padding: 6px 8px !important;
+            @include border-radius($border-radius);
+
+            &:hover {
+                background-color: transparentize($white, 0.7) !important;
+            }
+        }
+    }
+}
+
+ubud-topbar-layout .navbar .navbar-nav > li.nav-item > a {
+    font-weight: bold;
+}
+
+.k-list .k-item:focus,
+.k-list .k-item.k-state-focused,
+.k-list .k-item.k-state-focused:hover {
+    box-shadow: none;
+}
+
+.k-list .k-item.k-state-focused,
+.k-list .k-item.k-state-focused:hover {
+    background-color: $gray-200;
+    color: $dark;
+}
+
+.k-list .k-item {
+    font-weight: 500;
+}
+
+.k-list {
+    .k-item:focus,
+    .k-item .k-state-focused {
+        box-shadow: none;
+    }
+}
+
+// To be move
+app-user-control {
+    kendo-dropdownbutton {
+        background-color: transparent !important;
+
+        &.focus {
+            > .k-button {
+                background-color: $white;
+
+                > .k-icon {
+                    color: theme-color('primary');
+                }
+
+                > img {
+                    border-color: theme-color('primary');
+                }
+
+                &:hover {
+                    background-color: $white;
+
+                    > img {
+                        border-color: theme-color('primary');
+                    }
+                }
+            }
+        }
+
+        > .k-button {
+            background-color: transparentize($white, 0.7);
+            border-color: transparent;
+            padding: 6px 8px;
+
+            > .k-icon {
+                line-height: 1.3;
+                color: $navbar-color;
+            }
+
+            &:hover {
+                background-color: transparentize($white, 0.7);
+                border-color: transparent;
+
+                > img {
+                    border-color: $white;
+                }
+            }
+
+            > img {
+                width: 23px;
+                height: 23px;
+
+                border-radius: 50%;
+                border: 1px solid $navbar-color;
+            }
+        }
+    }
+}
+
+.btn {
+    font-weight: 500 !important;
+    &.btn-upper {
+        font-size: 12px;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+    > .k-icon {
+        margin-right: 5px;
+        &.icon-only {
+            margin-right: 0;
+        }
+    }
+
+    &.btn-wide {
+        min-width: 120px;
+    }
+}
+
+.v-align-middle {
+    vertical-align: middle;
+}
+
+app-notifications {
+    position: fixed;
+    top: 70px;
+    right: 15px;
+    z-index: 9999;
+
+    > .alert {
+        width: 400px;
+        margin-bottom: 10px;
+
+        > strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        > .alert-icon-float-left {
+            font-size: 40px;
+            float: left;
+            margin-right: 10px;
+        }
+    }
+}
+
+kendo-dropdownbutton {
+    > button:first-child {
+        > span:first-child {
+            margin-right: 5px;
+        }
+
+        > .caret {
+            margin-left: 5px;
+        }
+    }
+
+    &.btn {
+        padding: 0;
+        border-width: 0 !important;
+
+        &.btn-success {
+            > button {
+                background-color: theme-color('success') !important;
+                border-color: darken(theme-color('success'), 10%) !important;
+                color: color('white') !important;
+            }
+        }
+
+        &.btn-primary {
+            > button {
+                background-color: theme-color('primary') !important;
+                border-color: darken(theme-color('primary'), 10%) !important;
+                border-right-color: transparent !important;
+                color: color('white') !important;
+            }
+        }
+
+        &.btn-upper {
+            > button {
+                @extend .btn.btn-upper;
+            }
+        }
+    }
+}
+
+.container-md-full {
+    @extend .container;
+    &.limit-width {
+        max-width: 990px;
+    }
+}
+
+.navbar-nav .nav-link.active {
+    color: theme-color('primary') !important;
+    background-color: $white !important;
+    opacity: 1 !important;
+
+    &:hover {
+        color: $white !important;
+    }
+}
+
+//
+// Mobile layout
+//
+
+@include media-breakpoint-down(md) {
+    .app-header.navbar {
+        .navbar-brand {
+            position: relative !important;
+            left: 0 !important;
+            margin-left: 0 !important;
+            background-image: $navbar-brand-logo-md !important;
+            background-size: $navbar-brand-logo-md-size !important;
+            width: $navbar-brand-md-width !important;
+        }
+
+        .btn-add {
+            .btn-text {
+                display: none;
+            }
+
+            > button:first-child {
+                > span:first-child {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+
+    .container-md-full {
+        width: 100%;
+
+        &.container-md-no-margin {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+
+    .btn {
+        &.btn-wide {
+            width: 100%;
+            margin-bottom: 5px;
+        }
+    }
+
+    .breadcrumb {
+        padding-left: 45px;
+
+        .breadcrumb-item {
+            &:first-child {
+                border-left: 1px solid darken($border-color, 5%);
+                padding-left: 14px;
+            }
+        }
+    }
+
+    .content-header {
+        margin-bottom: 0;
+    }
+
+    .k-dialog {
+        min-width: 95%;
+    }
+}
+
+kendo-popup {
+    @include box-shadow(0 2px 4px 0 rgba(0, 0, 0, 0.05), 0 4px 5px 0 rgba(0, 0, 0, 0.06));
+}
+
+.k-window {
+    border-color: transparent;
+    @include box-shadow(0 0 20px rgba(0, 0, 0, 0.5));
+}
+
+.k-window-content {
+    padding: 15px 15px 25px 15px;
+}
+
+.k-window-titlebar {
+    border: none;
+}
+
+.k-dropdown-button.k-bare.k-widget {
+    background: none !important;
+
+    .k-button {
+        background: none !important;
+        border: transparent;
+    }
+    .k-button:focus {
+        box-shadow: none !important;
+    }
+}
+
+.btn-shortcut {
+    .md-icons {
+        font-size: 20px;
+        width: 30px;
+    }
+}
+
+.badge {
+    text-transform: uppercase;
+    font-size: 10px;
+}
+
+// Override CORE
+.breadcrumb {
+    background: $base-bg;
+    margin-bottom: 0;
+}
+
+.grid-no-header.k-grid .k-header {
+    display: none !important;
+}
+.column-no-header.k-header {
+    display: none !important;
+}
+
+.k-grid .k-header {
+    color: $primary;
+    text-transform: uppercase;
+    border: none;
+    font-weight: $font-weight-bold;
+}
+
+.k-grid-toolbar.k-header {
+    border-bottom: 1px solid $gray-200;
+}
+
+.grid-no-border {
+    border: none !important;
+    td,
+    .k-grid-content,
+    .k-grid-header-locked,
+    .k-grid-content-locked {
+        border-right: none !important;
+        border-left: none !important;
+        border-top: none !important;
+        border-bottom: 1px solid #c2cfd63b !important;
+    }
+    .k-grid-header {
+        border: none;
+    }
+}
+
+.w-5 {
+    width: 5%;
+}
+
+.w-10 {
+    width: 10%;
+}
+
+.w-15 {
+    width: 15%;
+}
+
+.w-40 {
+    width: 40%;
+}
+.w-8em {
+    width: 8em;
+}
+
+.k-switch-label-off {
+    color: $dark;
+}
+
+.border-rad-50 {
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+.k-grid-header {
+    font-size: 12px;
+}
+.k-datepicker.ng-valid .k-input {
+    color: $dark;
+}
+
+.k-grid-edit-row {
+    background: #e3e7eb !important;
+}
+
+.qr-code-disabled {
+    pointer-events: none;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.qr-button {
+    white-space: inherit;
+}
+
+.k-upload {
+    background: none !important;
+    border: none !important;
+}
+
+stanmen-skkni-preview-list {
+    ol {
+        list-style-type: none;
+        counter-reset: item;
+        margin: 0;
+        padding: 0;
+    }
+
+    ol > li {
+        display: table;
+        counter-increment: item;
+        margin-bottom: 0.6em;
+    }
+
+    ol > li:before {
+        content: counters(item, '.') '. ';
+        display: table-cell;
+        padding-right: 0.6em;
+    }
+
+    li ol > li {
+        margin: 0;
+    }
+
+    li ol > li:before {
+        content: counters(item, '.') ' ';
+    }
+}
+
+.doc-pdf-container {
+    font-size: 12pt !important;
+    font-family: 'Bookman Old Style', arial;
+}
+
+.doc-pdf-container i {
+    font-family: 'Bookman Old Style Italic', arial;
+}
+
+.doc-pdf-container strong {
+    font-family: 'Bookman Old Style Bold', arial;
+}
+
+.doc-pdf-container table {
+    strong {
+        font-family: 'Bookman Old Style Bold', arial;
+    }
+
+    i {
+        font-family: 'Bookman Old Style Italic', arial;
+    }
+    font-size: 12pt !important;
+    font-family: 'Bookman Old Style', arial;
+}
+
+@media (max-height: 1200px) {
+    .auth-mobile-more-padding {
+        padding-bottom: 80px !important;
+    }
+    .mobile-more-padding {
+        padding-bottom: 80px !important;
+    }
+}
+
+.content-header {
+    margin-bottom: 0 !important;
+    background-color: transparent !important;
+    border-bottom: none !important;
+}
+
+.dashboard-section {
+    padding: 20px 0;
+}
+
+kendo-pdf-export {
+    background: url('assets/img/draft-watermark.png') no-repeat;
+    background-size: 600px;
+    background-position: center center;
+}
+
+kendo-pdf-export .doc-pdf-container {
+    margin: 0 !important;
+}
+.pageNum {
+    font-family: 'Bookman Old Style', arial;
+    position: absolute;
+    bottom: 2cm;
+    right: 3cm;
+    font-size: 16px;
+}
+.doc-pdf-outer {
+    margin: 2.54cm 2.54cm 5.08cm 3.05cm;
+}

@@ -1,0 +1,44 @@
+.nav-tabs {
+    width: 100%;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    overflow-y: visible;
+    overflow-x: scroll;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    .nav-link {
+        padding: 20px 0;
+        font-size: 1.2rem;
+        margin-right: 30px;
+        color: $gray;
+        border: none;
+        border-bottom: 3px solid transparent;
+        transition: 0.5s all;
+        background: transparent;
+        &.active {
+            color: $primary;
+            border-bottom: 3px solid $primary;
+            background: transparent;
+            &:hover {
+                border-bottom-width: 3px;
+            }
+        }
+        &:hover {
+            border-bottom-width: 2px;
+        }
+    }
+
+    &.invers {
+        border-bottom: none;
+        .nav-link {
+            color: white;
+            opacity: 0.5;
+            &.active {
+                border-bottom: 3px solid white;
+                opacity: 1;
+            }
+        }
+    }
+}
+

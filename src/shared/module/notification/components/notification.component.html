@@ -1,0 +1,11 @@
+<div class="alert notification alert-{{ item.colorAsString }}"
+     [ngClass]="{'fade-in': !item.hide, 'fade-out': item.hide}"
+     *ngFor="let item of notifications.stream$ | async">
+    <button type="button" *ngIf="item.dismissible" class="close" (click)="hide(item)">
+        <span>&times;</span>
+    </button>
+    <i class="k-icon k-i-warning k-i-exception k-i-error alert-icon-float-left"></i>
+    <div class="notification-content-wrapper">
+        <strong *ngIf="item.title">{{ item.title }}</strong>{{ item.message }}
+    </div>
+</div>

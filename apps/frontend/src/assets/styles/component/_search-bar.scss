@@ -1,0 +1,70 @@
+.search {
+    position: relative;
+    form {
+        display: flex;
+        background: #2D5378;
+        border-radius: $box-radius;
+        align-items: center;
+        padding-left: 20px;
+        overflow: hidden;
+        max-width: 500px;
+        margin: 0 auto;
+        &.autohide {
+            position: absolute;
+            right: 0;
+            bottom: 15px;
+            width: 50px;
+            transition: 0.5s all;
+            background: transparent;
+
+            &:hover {
+                width: 400px;
+                background: #2D5378;
+            }
+        }
+        i {
+            color: white;
+            margin-right: 10px;
+        }
+        input {
+            background: transparent;
+            border: none;
+            padding: 10px;
+            color: $white;
+            flex: 1;
+            &::placeholder {
+                color: $softer-gray;
+            }
+        }
+
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .search {
+        max-width: 100%;
+        form {
+            &.autohide {
+                position: static;
+                top: 100%;
+                right: 0;
+                font-size: 1rem;
+                background: #2D5378;
+                width: 100%;
+                min-width: 100%;
+
+                &:hover {
+                    width: 100%;
+                }
+                input {
+                    max-width: 100%;
+                    color: $white;
+                    border-bottom: none;
+                    &::placeholder {
+                        color: $softer-gray;
+                    }
+                }
+            }
+        }
+    }
+}

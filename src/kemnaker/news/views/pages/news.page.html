@@ -1,0 +1,115 @@
+<div class="body-news">
+    <section class="news-tab">
+        <div class="container">
+            <h1 class="text-center text-lg-left mb-4 mb-lg-0">Berita</h1>
+            <div class="d-flex flex-column flex-lg-row justify-content-lg-between align-items-lg-end">
+                <div class="nav nav-tabs invers order-1 order-lg-0" id="statistik-tab">
+                    <a routerLink="all" routerLinkActive="active" class="nav-item nav-link" id="all-tab" data-toggle="tab" role="tab" aria-controls="nav-info">Semua Berita</a>
+                    <a class="nav-item nav-link" id="sekretariat-tab" data-toggle="tab" role="tab" aria-controls="nav-pelatihan">Sekretariat Jendral</a>
+                    <a class="nav-item nav-link" id="inspektorat-tab" data-toggle="tab" role="tab" aria-controls="nav-pemagangan">Inspektorat Jendral</a>
+                    <a class="nav-item nav-link" id="direktorat-tab" data-toggle="tab" role="tab" aria-controls="nav-pengaduan">Direktorat</a>
+                    <a class="nav-item nav-link" id="puslitbang-tab" data-toggle="tab" role="tab" aria-controls="nav-wklp">Puslitbang</a>
+                    <a class="nav-item nav-link" id="publikasi-tab" data-toggle="tab" role="tab" aria-controls="nav-wklp">Publikasi</a>
+                </div>
+                <div class="search order-0 order-lg-1">
+                    <form action="" id="form-search" class="autohide">
+                        <i class="fa fa-search"></i>
+                        <input type="text" class="search-text" placeholder="Cari berita">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="slider news">
+        <div id="news-slider" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="carousel-caption row" style="background-image: url('assets/images/banner.png')">
+                        <div class="container">
+                            <div class="row row-content">
+                                <div class="col-12 col-lg-12">
+                                    <div class="wrapper">
+                                        <div class="news-text col-12 col-lg-6">
+                                            <div class="news-info">
+                                                <div class="news-category">BERITA NAKER</div>
+                                                <div class="news-date">Selasa, 05 Juni 2018</div>
+                                            </div>
+                                            <a class="h4 news-title" href="#">
+                                                Indonesia Perjuangkan Jaminan Hak-Hak Pelaut Korban Bajak Laut
+                                            </a>
+                                            <p class="description news-description">
+                                                Jenewa-Indonesia secara tegas mendukung pengesahan amandemen Konvensi Pekerja Maritim (Maritim Labour Convention/MLC) yang mengatur jaminan hak-hak keuangan bagi pela...
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-caption row" style="background-image: url('assets/images/banner.png')">
+                        <div class="container">
+                            <div class="row row-content">
+                                <div class="col-12 col-lg-12">
+                                    <div class="wrapper">
+                                        <div class="news-text col-12 col-lg-6">
+                                            <div class="news-info">
+                                                <div class="news-category">BERITA NAKER</div>
+                                                <div class="news-date">Selasa, 05 Juni 2018</div>
+                                            </div>
+                                            <a class="h4 news-title" href="#">
+                                                Indonesia Perjuangkan Jaminan Hak-Hak Pelaut Korban Bajak Laut
+                                            </a>
+                                            <p class="description news-description">
+                                                Jenewa-Indonesia secara tegas mendukung pengesahan amandemen Konvensi Pekerja Maritim (Maritim Labour Convention/MLC) yang mengatur jaminan hak-hak keuangan bagi pela...
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-caption row" style="background-image: url('assets/images/banner.png')">
+                        <div class="container">
+                            <div class="row row-content">
+                                <div class="col-12 col-lg-12">
+                                    <div class="wrapper">
+                                        <div class="news-text col-12 col-lg-6">
+                                            <div class="news-info">
+                                                <div class="news-category">BERITA NAKER</div>
+                                                <div class="news-date">Selasa, 05 Juni 2018</div>
+                                            </div>
+                                            <a class="h4 news-title" href="#">
+                                                Indonesia Perjuangkan Jaminan Hak-Hak Pelaut Korban Bajak Laut
+                                            </a>
+                                            <p class="description news-description">
+                                                Jenewa-Indonesia secara tegas mendukung pengesahan amandemen Konvensi Pekerja Maritim (Maritim Labour Convention/MLC) yang mengatur jaminan hak-hak keuangan bagi pela...
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-indicator-container">
+                <div class="container">
+                    <ol class="carousel-indicators">
+                        <li data-target="#news-slider" data-slide-to="0" class="active"></li>
+                        <li data-target="#news-slider" data-slide-to="1"></li>
+                        <li data-target="#news-slider" data-slide-to="2"></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <router-outlet></router-outlet>
+    </section>
+</div>

@@ -1,0 +1,44 @@
+<div class="row row-content">
+    <ng-container *ngFor="let item of news; let i = index">
+        <ng-container *ngIf="i === 0">
+            <div class="col-12 col-lg-12">
+                <div class="wrapper">
+                    <div class="news-image col-12 col-lg-6">
+                        <img src="assets/images/banner.png" alt="news">
+                    </div>
+                    <div class="news-text col-12 col-lg-6">
+                        <div class="news-info">
+                            <div class="news-category">{{ item.author }}</div>
+                            <div class="news-date">{{ item.date | date:'mediumDate' }}</div>
+                        </div>
+                        <a class="h4 news-title" href="#">
+                            {{ item.title }}
+                        </a>
+                        <p class="description news-description">
+                            {{ item.content }}
+                        </p>
+                        <a href="#">Baca Selengkapnya</a>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+        <ng-container *ngIf="i !== 0">
+            <div class="col-12 col-lg-4">
+                <div class="wrapper">
+                    <div class="news-image col-12 col-lg-12">
+                        <img src="assets/images/banner.png" alt="news">
+                    </div>
+                    <div class="news-text col-12 col-lg-12">
+                        <div class="news-info">
+                            <div class="news-category">{{ item.author }}</div>
+                            <div class="news-date">{{ item.date | date:'mediumDate' }}</div>
+                        </div>
+                        <a class="h5 news-title" href="#">
+                            {{ item.title }}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </ng-container>
+</div>

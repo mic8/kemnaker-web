@@ -1,0 +1,23 @@
+.nav-tabs {
+    .nav-link {
+        color: $gray-600;
+        &.active {
+            color: $gray-800;
+            background: #fff;
+            border-color: $border-color;
+            border-bottom-color: #fff;
+            &:focus {
+                background: #fff;
+                border-color: $border-color;
+                border-bottom-color: #fff;
+            }
+        }
+    }
+}
+
+.card-block {
+    .tab-content {
+        margin-top: 0;
+        border: 0;
+    }
+}

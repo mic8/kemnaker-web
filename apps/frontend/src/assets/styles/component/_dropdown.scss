@@ -1,0 +1,11 @@
+.dropdown-menu {
+    box-shadow: 0 8px 25px 0 rgba(0, 0, 0, 0.06);
+    min-width: 200px;
+    border: none;
+
+    > .dropdown-item {
+        color: #6b6b6b;
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+}

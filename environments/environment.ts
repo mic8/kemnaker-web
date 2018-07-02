@@ -5,4 +5,5 @@
 
 export const environment = {
     production: false,
+    kemnaker_api_endpoint: 'http://localhost:8000/v1/',
 };
