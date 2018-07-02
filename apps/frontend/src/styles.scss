@@ -1,0 +1,20 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i');
+
+@import '../../../assets/styles/variables';
+@import 'assets/styles/variables';
+
+@import "~bootstrap/scss/bootstrap";
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/fa-regular";
+@import "~@fortawesome/fontawesome-free/scss/fa-solid";
+@import "~@fortawesome/fontawesome-free/scss/fa-brands";
+@import '~@progress/kendo-theme-bootstrap/scss/all';
+@import "assets/styles/core-variables";
+@import "assets/styles/layout/layout";
+@import "assets/styles/core/core";
+@import "assets/styles/component/component";
+
+a:not([href]) {
+    cursor: pointer;
+}

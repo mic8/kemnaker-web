@@ -1,0 +1,50 @@
+$base-bg: lighten($gray-light, 5%);
+$base-darker-bg: darken($base-bg, 1%);
+$base-darkest-bg: darken($base-darker-bg, 3%);
+$border-color: $base-darkest-bg;
+
+// Navbar
+$navbar-bg: theme-color('primary') !default;
+$navbar-brand-bg: $navbar-bg;
+$navbar-color: $gray-200 !default;
+$navbar-hover-color: $white !default;
+$navbar-brand-logo: url('./assets/img/logo-short-white.png') !default;
+$navbar-brand-logo-size: 110px auto !default;
+$navbar-brand-logo-md: url('./assets/img/logo-symbol-white.png') !default;
+$navbar-brand-logo-md-size: 33px auto !default;
+$navbar-brand-md-width: 60px;
+$navbar-brand-minimized-width: 155px !default;
+$navbar-brand-minimized-logo: $navbar-brand-logo;
+$navbar-brand-minimized-logo-size: $navbar-brand-logo-size;
+
+// Sidebar
+$sidebar-bg: $base-bg;
+$sidebar-nav-link-bg: $base-bg;
+$sidebar-nav-dropdown-bg: $base-darker-bg;
+$sidebar-color: $gray-600;
+$sidebar-nav-link-active-color: theme-color('primary');
+$sidebar-nav-link-color: $sidebar-color;
+$sidebar-nav-link-hover-bg: darken($sidebar-nav-dropdown-bg, 3%);
+$sidebar-nav-link-hover-color: $sidebar-color;
+$sidebar-nav-link-icon-color: $sidebar-color;
+$sidebar-nav-link-hover-icon-color: $sidebar-nav-link-icon-color;
+$sidebar-nav-link-active-icon-color: $sidebar-nav-link-active-color;
+$sidebar-nav-dropdown-color: $sidebar-color;
+$sidebar-minimizer-bg: $sidebar-nav-dropdown-bg;
+$sidebar-minimizer-indicator-color: $sidebar-color !default;
+$sidebar-minimizer-hover-indicator-color: theme-color('primary') !default;
+$sidebar-minimizer-indicator: str-replace(
+    url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='#{$sidebar-minimizer-indicator-color}' d='M10.414 7.95l4.243-4.243a1 1 0 0 0-1.414-1.414l-4.95 4.95a.997.997 0 0 0 0 1.414l4.95 4.95a1 1 0 1 0 1.414-1.415L10.414 7.95zm-7 0l4.243-4.243a1 1 0 0 0-1.414-1.414l-4.95 4.95a.997.997 0 0 0 0 1.414l4.95 4.95a1 1 0 0 0 1.414-1.415L3.414 7.95z'/%3E%3C/svg%3E"),
+    '#',
+    '%23'
+) !default;
+$sidebar-minimizer-hover-indicator: str-replace(
+    url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='#{$sidebar-minimizer-hover-indicator-color}' d='M10.414 7.95l4.243-4.243a1 1 0 0 0-1.414-1.414l-4.95 4.95a.997.997 0 0 0 0 1.414l4.95 4.95a1 1 0 1 0 1.414-1.415L10.414 7.95zm-7 0l4.243-4.243a1 1 0 0 0-1.414-1.414l-4.95 4.95a.997.997 0 0 0 0 1.414l4.95 4.95a1 1 0 0 0 1.414-1.415L3.414 7.95z'/%3E%3C/svg%3E"),
+    '#',
+    '%23'
+) !default;
+$sidebar-minimizer-hover-bg: $sidebar-nav-link-hover-bg;
+$sidebar-width: 270px !default;
+
+$list-item-padding-y: 8px !default;
+$enable-transitions: true;

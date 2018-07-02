@@ -1,0 +1,33 @@
+.accordion {
+    .card {
+        border: none;
+        box-shadow: $box-shadow;
+        margin-bottom: 20px;
+        border-radius: $box-radius !important;
+        overflow: hidden;
+        .card-header {
+            background: white;
+            border: none;
+            font-weight: 700;
+            font-size: 1.4rem;
+            cursor: pointer;
+            padding: 30px;
+            position: relative;
+            &:after {
+                position: absolute;
+                right: 30px;
+                top: 10px;
+                content: '▴';
+                color: $gray;
+                font-size: 3rem;
+            }
+            &.collapsed:after {
+                content: '▾';
+            }
+        }
+        .card-body {
+            padding: 0 30px 30px;
+            line-height: 2rem;
+        }
+    }
+}
