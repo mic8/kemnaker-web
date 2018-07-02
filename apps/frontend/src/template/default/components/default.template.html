@@ -1,0 +1,401 @@
+<section class="top-bar d-none d-lg-block">
+    <div class="container">
+        <div class="row align-items-center justify-content-between">
+            <div class="col-md-8">
+                <span class="title">NEWSFLASH</span>
+                <span>Kemnaker-BPN Teken Nota Kesepahaman Bidang Pertanahan dan Pelatihan Geomatika</span>
+            </div>
+            <div class="col-md-4 text-right">
+                <ng-container *ngIf="!(user$ | async) else topbarAuthenticated">
+                    <div class="control-link">
+                        <a routerLink="/auth/login">Login</a> / <a routerLink="/user/register">Sign Up</a>
+                    </div>
+                </ng-container>
+                <ng-template #topbarAuthenticated>
+                    <ubud-user-control [size]="5" image="assets/images/user-profile.jpg">
+                        <div class="dropdown-menu show dropdown-menu-right">
+                            <a routerLink="/profile" class="dropdown-item">
+                                <i class="fa fa-cog"></i>
+                                Profil
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item text-danger" routerLink="/auth/logout">
+                                <i class="fa fa-power-off"></i>
+                                Logout
+                            </a>
+                        </div>
+                    </ubud-user-control>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+</section>
+
+<nav class="navbar navbar-expand-lg" id="navbar" #navbar>
+    <div class="container">
+        <a routerLink="/" class="navbar-brand"><img src="assets/images/logo.png"/></a>
+        <button #navbarToggler class="navbar-toggler collapsed" (click)="toggleNav()" type="button" aria-controls="navbar-nar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </span>
+        </button>
+        <div class="collapse navbar-collapse collapsed" id="navbar-nav" #navbarNav>
+            <ul class="navbar-nav ml-auto">
+                <ng-container *ngIf="!(user$ | async) else authenticatedMobileNav">
+                    <li class="nav-item d-flex d-lg-none auth-button row">
+                        <div class="wrapper col-6">
+                            <a routerLink="/auth/login">
+                                <button class="btn btn-primary">
+                                    Login
+                                </button>
+                            </a>
+                        </div>
+                        <div class="wrapper col-6">
+                            <a routerLink="/user/register">
+                                <button class="btn btn-primary">
+                                    Sign Up
+                                </button>
+                            </a>
+                        </div>
+                    </li>
+                </ng-container>
+                <ng-template #authenticatedMobileNav>
+                    <li class="nav-item d-lg-none">
+                        <a class="nav-link dropdown-toggle" (click)="dropdownAccount.classList.toggle('show')">
+                            Akun
+                        </a>
+                        <div class="dropdown-menu" #dropdownAccount>
+                            <a class="dropdown-item" routerLink="/profile">Profil</a>
+                            <a class="dropdown-item" routerLink="/auth/logout">Logout</a>
+                        </div>
+                    </li>
+                </ng-template>
+                <li class="nav-item"><a class="nav-link" routerLink="/">Beranda</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" (click)="dropdownMenu.classList.toggle('show')" id="unit-kerja-dropdown"
+                       data-toggle="dropdown" aria-haspopup="true" role="button"
+                       aria-expanded="false">
+                        Unit Kerja
+                    </a>
+                    <div class="dropdown-menu" #dropdownMenu aria-labelledby="unit-kerja-dropdown">
+                        <a class="dropdown-item" (click)="showUnit()">Sekretariat Jendral</a>
+                        <a class="dropdown-item" (click)="showUnit()">Inspektorat Jendral</a>
+                        <a class="dropdown-item" (click)="showUnit()">BARENBANG</a>
+                        <a class="dropdown-item" (click)="showUnit()">BINALATTAS</a>
+                        <a class="dropdown-item" (click)="showUnit()">BINAPENTA & PKK</a>
+                        <a class="dropdown-item" (click)="showUnit()">PHI - JSK</a>
+                        <a class="dropdown-item" (click)="showUnit()">BINWASNAKER & K3</a>
+                    </div>
+                </li>
+                <li class="nav-item"><a class="nav-link" routerLink="/news/all">Berita</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Regulasi</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Penelitian & Info</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Data PMI</a></li>
+                <li class="nav-item dropdown services">
+                    <a class="nav-link" (click)="toggleModalService()"><i class="fas fa-th mr-2"></i>Layanan</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div #modalService class="modal services active" id="modal-services" tabindex="-1" role="dialog" aria-labelledby="modal-services">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <button type="button" class="close-button" (click)="toggleModalService()">
+                <span aria-hidden="true">×</span>
+            </button>
+            <div class="container">
+                <h1 class="text-lg-center text-left mb-5">Layanan Kami</h1>
+                <div class="row">
+                    <div class="col-6 col-lg-3">
+                        <div class="wrapper">
+                            <div class="icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <h5 class="service-title">Pengaduan</h5>
+                            <p class="description service-description">
+                                Layanan untuk melaporkan masalah terkait tenaga kerja
+                            </p>
+                            <a href="#">Kunjungi Layanan</a>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <div class="wrapper">
+                            <div class="icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <h5 class="service-title">Pengaduan</h5>
+                            <p class="description service-description">
+                                Layanan untuk melaporkan masalah terkait tenaga kerja
+                            </p>
+                            <a href="#">Kunjungi Layanan</a>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <div class="wrapper">
+                            <div class="icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <h5 class="service-title">Pengaduan</h5>
+                            <p class="description service-description">
+                                Layanan untuk melaporkan masalah terkait tenaga kerja
+                            </p>
+                            <a href="#">Kunjungi Layanan</a>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <div class="wrapper">
+                            <div class="icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <h5 class="service-title">Pengaduan</h5>
+                            <p class="description service-description">
+                                Layanan untuk melaporkan masalah terkait tenaga kerja
+                            </p>
+                            <a href="#">Kunjungi Layanan</a>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <div class="wrapper">
+                            <div class="icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <h5 class="service-title">Pengaduan</h5>
+                            <p class="description service-description">
+                                Layanan untuk melaporkan masalah terkait tenaga kerja
+                            </p>
+                            <a href="#">Kunjungi Layanan</a>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <div class="wrapper">
+                            <div class="icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <h5 class="service-title">Pengaduan</h5>
+                            <p class="description service-description">
+                                Layanan untuk melaporkan masalah terkait tenaga kerja
+                            </p>
+                            <a href="#">Kunjungi Layanan</a>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <div class="wrapper">
+                            <div class="icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <h5 class="service-title">Pengaduan</h5>
+                            <p class="description service-description">
+                                Layanan untuk melaporkan masalah terkait tenaga kerja
+                            </p>
+                            <a href="#">Kunjungi Layanan</a>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <div class="wrapper">
+                            <div class="icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <h5 class="service-title">Pengaduan</h5>
+                            <p class="description service-description">
+                                Layanan untuk melaporkan masalah terkait tenaga kerja
+                            </p>
+                            <a href="#">Kunjungi Layanan</a>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <div class="wrapper">
+                            <div class="icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <h5 class="service-title">Pengaduan</h5>
+                            <p class="description service-description">
+                                Layanan untuk melaporkan masalah terkait tenaga kerja
+                            </p>
+                            <a href="#">Kunjungi Layanan</a>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <div class="wrapper">
+                            <div class="icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <h5 class="service-title">Pengaduan</h5>
+                            <p class="description service-description">
+                                Layanan untuk melaporkan masalah terkait tenaga kerja
+                            </p>
+                            <a href="#">Kunjungi Layanan</a>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <div class="wrapper">
+                            <div class="icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <h5 class="service-title">Pengaduan</h5>
+                            <p class="description service-description">
+                                Layanan untuk melaporkan masalah terkait tenaga kerja
+                            </p>
+                            <a href="#">Kunjungi Layanan</a>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <div class="wrapper">
+                            <div class="icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <h5 class="service-title">Pengaduan</h5>
+                            <p class="description service-description">
+                                Layanan untuk melaporkan masalah terkait tenaga kerja
+                            </p>
+                            <a href="#">Kunjungi Layanan</a>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <div class="wrapper">
+                            <div class="icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <h5 class="service-title">Pengaduan</h5>
+                            <p class="description service-description">
+                                Layanan untuk melaporkan masalah terkait tenaga kerja
+                            </p>
+                            <a href="#">Kunjungi Layanan</a>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <div class="wrapper">
+                            <div class="icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <h5 class="service-title">Pengaduan</h5>
+                            <p class="description service-description">
+                                Layanan untuk melaporkan masalah terkait tenaga kerja
+                            </p>
+                            <a href="#">Kunjungi Layanan</a>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <div class="wrapper">
+                            <div class="icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <h5 class="service-title">Pengaduan</h5>
+                            <p class="description service-description">
+                                Layanan untuk melaporkan masalah terkait tenaga kerja
+                            </p>
+                            <a href="#">Kunjungi Layanan</a>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <div class="wrapper">
+                            <div class="icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <h5 class="service-title">Pengaduan</h5>
+                            <p class="description service-description">
+                                Layanan untuk melaporkan masalah terkait tenaga kerja
+                            </p>
+                            <a href="#">Kunjungi Layanan</a>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <div class="wrapper">
+                            <div class="icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <h5 class="service-title">Pengaduan</h5>
+                            <p class="description service-description">
+                                Layanan untuk melaporkan masalah terkait tenaga kerja
+                            </p>
+                            <a href="#">Kunjungi Layanan</a>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <div class="wrapper">
+                            <div class="icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <h5 class="service-title">Pengaduan</h5>
+                            <p class="description service-description">
+                                Layanan untuk melaporkan masalah terkait tenaga kerja
+                            </p>
+                            <a href="#">Kunjungi Layanan</a>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <div class="wrapper">
+                            <div class="icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <h5 class="service-title">Pengaduan</h5>
+                            <p class="description service-description">
+                                Layanan untuk melaporkan masalah terkait tenaga kerja
+                            </p>
+                            <a href="#">Kunjungi Layanan</a>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <div class="wrapper">
+                            <div class="icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <h5 class="service-title">Pengaduan</h5>
+                            <p class="description service-description">
+                                Layanan untuk melaporkan masalah terkait tenaga kerja
+                            </p>
+                            <a href="#">Kunjungi Layanan</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<main>
+    <router-outlet></router-outlet>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="d-flex text-center text-lg-left align-items-center align-items-lg-end justify-content-between flex-column flex-lg-row">
+            <div>
+                <a routerLink="/">
+                    <img class="logo" src="assets/images/logo.png"/>
+                </a>
+                <p>
+                    Jl. Jendral Gatot Subroto Kav. 51, Daerah Khusus<br/>
+                    Ibukota Jakarta 12750, Indonesia
+                </p>
+                <div class="d-flex flex-column flex-lg-row row">
+                    <div class="phone">Telp: 021-5255733</div>
+                    <div class="call-center">Call Center: 021-5255733</div>
+                </div>
+            </div>
+            <div class="d-flex flex-column align-items-center align-items-lg-end mt-4">
+                <div class="right social-icon">
+                    <ul class="row">
+                        <li id="facebook-1"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                        <li id="twitter-1"><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li id="instagram-1"><a href="#"><i class="fab fa-instagram"></i></a></li>
+                        <li id="youtube-1"><a href="#"><i class="fab fa-youtube"></i></a></li>
+                    </ul>
+                </div>
+                <div>
+                    <a routerLink="/information/about">Tentang Kemnaker</a>
+                    <a href="#">Info Alamat</a>
+                    <a routerLink="/information/contact">Kontak</a>
+                    <a href="#">Sitemap</a>
+                    <a routerLink="/information/faq">FAQ</a>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex flex-row text-center text-lg-left">
+            Kementerian Ketenagakerjaan Republik Indonesia © 2018 • Hak Cipta Dilindungi Undang-Undang.
+        </div>
+    </div>
+</footer>

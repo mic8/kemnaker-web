@@ -1,0 +1,23 @@
+<form [formGroup]="form.formGroup" novalidate method="post" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" class="form-control" formControlName="username" />
+        <ubud-form-error [control]="form.formGroup.controls.username" [rules]="form.rules"></ubud-form-error>
+    </div>
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" class="form-control" formControlName="email" />
+        <ubud-form-error [control]="form.formGroup.controls.email" [rules]="form.rules"></ubud-form-error>
+    </div>
+    <div class="form-group">
+        <label for="nama">Nama Lengkap</label>
+        <input type="text" id="nama" class="form-control" formControlName="name" />
+        <ubud-form-error [control]="form.formGroup.controls.name" [rules]="form.rules"></ubud-form-error>
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" class="form-control" formControlName="password" />
+        <ubud-form-error [control]="form.formGroup.controls.password" [rules]="form.rules"></ubud-form-error>
+    </div>
+    <button type="submit" style="display: none;"></button>
+</form>

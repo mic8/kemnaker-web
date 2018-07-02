@@ -1,0 +1,36 @@
+<form [formGroup]="form.formGroup" (ngSubmit)="onSubmit()" method="post" novalidate>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="username">Username atau email address</label>
+                <input class="form-control"
+                       name="username"
+                       id="username"
+                       formControlName="username"
+                />
+
+                <ubud-form-error [control]="form.formGroup.controls.username" [rules]="form.rules"></ubud-form-error>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="password" class="d-block">
+                    Password
+                </label>
+                <input type="password"
+                       class="form-control"
+                       name="password"
+                       id="password"
+                       formControlName="password"
+                />
+
+                <ubud-form-error [control]="form.formGroup.controls.password" [rules]="form.rules"></ubud-form-error>
+            </div>
+        </div>
+    </div>
+
+    <input type="submit" style="display: none;"/>
+</form>

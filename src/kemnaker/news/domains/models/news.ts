@@ -8,7 +8,10 @@ export class News extends UUIDModel<News> {
     public author: string;
 
     @Type(forwardRef(() => Date) as any)
-    public date: Date;
+    public createdAt: Date;
+
+    @Type(forwardRef(() => Date) as any)
+    public updatedAt: Date;
 
     public constructor(data?: Partial<News>) {
         super(data);

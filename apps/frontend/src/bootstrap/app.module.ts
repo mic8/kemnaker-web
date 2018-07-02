@@ -19,6 +19,11 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import {KemnakerApiModule} from '@kemnaker/api/api.module';
 import {NotificationModule} from '@shared/module/notification/notification.module';
+import {KemnakerAuthModule} from '@kemnaker/auth/auth.module';
+import {Initializer} from './app.initializer';
+import {AppGuard} from './app.guard';
+import {UbudStorageModule} from '@ubud/storage';
+import {KemnakerDefaultTemplateModule} from '../template/default/default-template.module';
 
 @NgModule({
     declarations: [AppComponent],
@@ -40,10 +45,13 @@ import {NotificationModule} from '@shared/module/notification/notification.modul
         UbudDropdownModule,
         UbudUserControlModule,
         NotificationModule.forRoot(),
+        UbudStorageModule.forRoot(),
+        KemnakerDefaultTemplateModule,
 
         KemnakerApiModule,
+        KemnakerAuthModule,
     ],
-    providers: [],
+    providers: [Initializer],
     bootstrap: [AppComponent],
 })
 export class AppModule {}

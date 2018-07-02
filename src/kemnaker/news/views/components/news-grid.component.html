@@ -9,7 +9,7 @@
                     <div class="news-text col-12 col-lg-6">
                         <div class="news-info">
                             <div class="news-category">{{ item.author }}</div>
-                            <div class="news-date">{{ item.date | date:'mediumDate' }}</div>
+                            <div class="news-date">{{ item.createdAt | date:'mediumDate' }}</div>
                         </div>
                         <a class="h4 news-title" href="#">
                             {{ item.title }}
@@ -31,7 +31,7 @@
                     <div class="news-text col-12 col-lg-12">
                         <div class="news-info">
                             <div class="news-category">{{ item.author }}</div>
-                            <div class="news-date">{{ item.date | date:'mediumDate' }}</div>
+                            <div class="news-date">{{ item.createdAt | date:'mediumDate' }}</div>
                         </div>
                         <a class="h5 news-title" href="#">
                             {{ item.title }}

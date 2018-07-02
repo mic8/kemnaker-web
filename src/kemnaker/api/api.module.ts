@@ -6,6 +6,7 @@ import {apiServiceFactory} from '@kemnaker/api/factories/api-client.factory';
 import {KemnakerApiClient} from '@kemnaker/api/client';
 import {RequestForSubmitTransformerInterceptor} from '@kemnaker/api/interceptor/for-submit-transformer.interceptor';
 import {ErrorNotificatorInterceptor} from '@kemnaker/api/interceptor/error-notificator.interceptor';
+import {AuthInterceptor} from '@kemnaker/auth/interceptors/auth.interceptor';
 
 @NgModule({
     imports: [UbudHttpModule],
@@ -15,11 +16,11 @@ import {ErrorNotificatorInterceptor} from '@kemnaker/api/interceptor/error-notif
             useFactory: apiServiceFactory,
             deps: [HttpClient, Injector],
         },
-        /*{
+        {
             provide: KEMNAKER_API_INTERCEPTORS,
             useClass: AuthInterceptor,
             multi: true,
-        },*/
+        },
         {
             provide: KEMNAKER_API_INTERCEPTORS,
             useClass: CamelResponseTransformerInterceptor,
