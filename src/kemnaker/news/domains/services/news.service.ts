@@ -8,6 +8,13 @@ import {ResponseTransformer} from '@kemnaker/api/transformer/response';
 export class NewsService {
     public constructor(private api: KemnakerApiClient) {}
 
+    public getFeatureNews(): Observable<News[]> {
+        return this.api.get(`feature-news`)
+            .pipe(
+                ResponseTransformer.toData(), ResponseTransformer.toArrayClass(News),
+            );
+    }
+
     public getDummyNews(): Observable<News[]> {
         return this.api.get(`news`)
             .pipe(

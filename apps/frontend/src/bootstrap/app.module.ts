@@ -21,14 +21,15 @@ import {KemnakerApiModule} from '@kemnaker/api/api.module';
 import {NotificationModule} from '@shared/module/notification/notification.module';
 import {KemnakerAuthModule} from '@kemnaker/auth/auth.module';
 import {Initializer} from './app.initializer';
-import {AppGuard} from './app.guard';
 import {UbudStorageModule} from '@ubud/storage';
 import {KemnakerDefaultTemplateModule} from '../template/default/default-template.module';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
     declarations: [AppComponent],
     imports: [
         BrowserModule,
+        BrowserAnimationsModule,
         StoreModule.forRoot(appReducer),
         EffectsModule.forRoot([]),
         ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
